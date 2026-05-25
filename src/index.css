@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ----------------------------------------------------------------
+   base + helpers
+   ---------------------------------------------------------------- */
+:root {
+  color-scheme: dark;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  /* extremely subtle radial wash so the background isn't flat */
+  background-image:
+    radial-gradient(1200px 600px at 80% -10%, rgba(251, 191, 36, 0.05), transparent 60%),
+    radial-gradient(900px 500px at 0% 110%, rgba(99, 102, 241, 0.06), transparent 55%);
+  background-attachment: fixed;
+}
+
+::selection {
+  background: rgba(251, 191, 36, 0.3);
+  color: #fff;
+}
+
+/* ----------------------------------------------------------------
+   reusable components
+   ---------------------------------------------------------------- */
+@layer components {
+  .container-tight {
+    @apply max-w-5xl mx-auto px-6;
+  }
+  .container-wide {
+    @apply max-w-6xl mx-auto px-6;
+  }
+
+  .kicker {
+    @apply text-xs font-mono uppercase tracking-[0.2em] text-ink-mute;
+  }
+
+  .section-title {
+    @apply text-3xl sm:text-4xl font-semibold tracking-tightest text-ink;
+  }
+
+  .card {
+    @apply rounded-xl border border-bg-line bg-bg-card/60 backdrop-blur-sm;
+  }
+  .card-hover {
+    @apply transition-colors duration-200 hover:border-ink-mute/40;
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-bg-line bg-bg-surface/60 px-3 py-1 text-xs text-ink-dim font-mono;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-colors duration-200;
+  }
+  .btn-primary {
+    @apply btn bg-accent text-bg hover:bg-accent-soft;
+  }
+  .btn-ghost {
+    @apply btn border border-bg-line text-ink hover:border-ink-mute hover:bg-white/5;
+  }
+
+  .link-arrow {
+    @apply inline-flex items-center gap-1 text-accent hover:text-accent-soft transition-colors duration-150;
+  }
+}
+
+/* ----------------------------------------------------------------
+   reduced motion respect
+   ---------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
