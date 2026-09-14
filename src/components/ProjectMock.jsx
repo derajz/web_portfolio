@@ -15,6 +15,7 @@ export default function ProjectMock({ kind, slug }) {
 
       {kind === 'rfid'     && <RfidMock />}
       {kind === 'calendar' && <CalendarMock />}
+      {kind === 'student'  && <StudentMock />}
     </div>
   );
 }
@@ -120,6 +121,57 @@ function CalendarMock() {
         <div className="mt-2 flex gap-3 text-[10px] text-emerald-400">
           <span>+38 this week</span>
           <span className="text-ink-mute">12 pending</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function StudentMock() {
+  const students = [
+    ['2024-001', 'Maria Santos', '3.8', '95%'],
+    ['2024-002', 'Juan Cruz', '3.5', '88%'],
+    ['2024-003', 'Ana Reyes', '3.9', '92%'],
+    ['2024-004', 'Carlos Mendoza', '3.2', '85%'],
+  ];
+  return (
+    <div className="grid grid-cols-[80px,1fr] min-h-[220px]">
+      <aside className="bg-black/30 border-r border-bg-line p-2 flex flex-col gap-1">
+        {['dashboard','students','attendance','grades','reports'].map((s, i) => (
+          <span
+            key={s}
+            className={`text-[10px] px-1.5 py-1 rounded ${
+              i === 0 ? 'bg-accent/15 text-accent' : 'text-ink-mute'
+            }`}
+          >
+            {s}
+          </span>
+        ))}
+      </aside>
+      <div className="p-3">
+        <div className="text-[11px] text-ink-dim mb-1">Student Records · Active</div>
+        <table className="w-full text-[10px]">
+          <thead className="text-ink-mute">
+            <tr className="border-b border-bg-line">
+              {['id','name','gpa','attendance'].map(h => (
+                <th key={h} className="text-left font-medium py-1 pr-2">{h}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {students.map((s, i) => (
+              <tr key={i} className="border-b border-dashed border-bg-line/60">
+                <td className="py-1 pr-2 text-ink-dim">{s[0]}</td>
+                <td className="py-1 pr-2 text-ink">{s[1]}</td>
+                <td className="py-1 pr-2 text-accent">{s[2]}</td>
+                <td className="py-1 pr-2 text-emerald-400">{s[3]}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <div className="mt-2 flex gap-3 text-[10px] text-accent">
+          <span>1,234 students</span>
+          <span className="text-ink-mute">Real-time updates</span>
         </div>
       </div>
     </div>

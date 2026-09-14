@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, MapPin, CircleDot } from 'lucide-react';
+import { ArrowRight, MapPin, CircleDot, Github, Linkedin, Mail, Download } from 'lucide-react';
 import { profile } from '../data/profile.js';
 
 export default function Hero() {
+  const techStack = ['PHP', 'MySQL', 'JavaScript', 'React', 'Next.js', 'AI-Assisted Development'];
+
   return (
     <section id="top" className="relative pt-16 pb-20 sm:pt-24 sm:pb-28 overflow-hidden">
       {/* subtle decorative grid behind the hero */}
@@ -30,32 +32,77 @@ export default function Hero() {
           <div className="inline-flex items-center gap-2 rounded-full border border-bg-line bg-bg-card/60 px-3 py-1 text-xs text-ink-dim mb-6">
             <CircleDot className="h-3 w-3 text-emerald-400" />
             <span>Available for junior roles</span>
-            <span className="text-ink-mute">·</span>
-            <span className="text-ink-mute">starting July 2026</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tightest leading-[1.05] text-ink">
-            {profile.role.split(' ')[0]}{' '}
-            <span className="text-accent">{profile.role.split(' ').slice(1).join(' ')}</span>
-            <br />
-            <span className="text-ink-dim">based in {profile.location.split(',')[0]}.</span>
+            {profile.name}
           </h1>
 
+          <h2 className="mt-4 text-2xl sm:text-3xl font-semibold text-accent">
+            {profile.role}
+          </h2>
+
+          <p className="mt-4 text-lg sm:text-xl text-ink-dim font-medium">
+            "{profile.tagline}"
+          </p>
+
           <p className="mt-6 max-w-xl text-base sm:text-lg text-ink-dim leading-relaxed">
-            Hi, I&apos;m {profile.shortName} — a junior dev who ships small, useful systems.
-            Two are already running in production: an{' '}
-            <span className="text-ink">RFID attendance platform</span> from my capstone, and a{' '}
-            <span className="text-ink">booking website with a full admin panel</span> from my OJT
-            at Bonzaire Enterprises.
+            Recent BSIT graduate focused on web applications, business systems, and AI-assisted development. 
+            I use AI coding tools to move faster while understanding, testing, debugging, and improving the software I build.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a href="#projects" className="btn-primary">
-              See my work <ArrowRight className="h-4 w-4" />
+              View My Projects <ArrowRight className="h-4 w-4" />
             </a>
-            <a href="#contact" className="btn-ghost">
-              Contact me
+            <a href="/Jared_Christian_Miguel_CV.pdf" download="Jared_Christian_Miguel_CV.pdf" className="btn-ghost">
+              <Download className="h-4 w-4" />
+              Download Resume
             </a>
+          </div>
+
+          {/* social links */}
+          <div className="mt-6 flex flex-wrap items-center gap-4">
+            <a
+              href={profile.socials.find(s => s.label === 'GitHub')?.href || '#'}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm text-ink-dim hover:text-accent transition-colors"
+              aria-label="View GitHub profile"
+            >
+              <Github className="h-4 w-4" />
+              GitHub
+            </a>
+            <a
+              href={profile.socials.find(s => s.label === 'LinkedIn')?.href || '#'}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm text-ink-dim hover:text-accent transition-colors"
+              aria-label="View LinkedIn profile"
+            >
+              <Linkedin className="h-4 w-4" />
+              LinkedIn
+            </a>
+            <a
+              href={`mailto:${profile.email}`}
+              className="flex items-center gap-2 text-sm text-ink-dim hover:text-accent transition-colors"
+              aria-label="Send email"
+            >
+              <Mail className="h-4 w-4" />
+              Email
+            </a>
+          </div>
+
+          {/* technology row */}
+          <div className="mt-8">
+            <p className="text-xs text-ink-mute font-mono uppercase tracking-wider mb-3">Technologies I work with</p>
+            <div className="flex flex-wrap gap-2">
+              {techStack.map(tech => (
+                <span key={tech} className="pill">
+                  {tech}
+                </span>
+              ))}
+            </div>
           </div>
 
           {/* stats */}

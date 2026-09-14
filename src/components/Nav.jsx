@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
-import { Menu, X, Mail } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { profile } from '../data/profile.js';
 
 const links = [
-  { href: '#about',       label: 'About' },
-  { href: '#experience',  label: 'Experience' },
+  { href: '#top',         label: 'Home' },
   { href: '#projects',    label: 'Projects' },
-  { href: '#skills',      label: 'Skills' },
+  { href: '#resume',      label: 'Resume' },
+  { href: '#how-i-build', label: 'How I Build' },
+  { href: '#about',       label: 'About' },
   { href: '#contact',     label: 'Contact' },
 ];
 
@@ -50,8 +51,8 @@ export default function Nav() {
               {l.label}
             </a>
           ))}
-          <a href={`mailto:${profile.email}`} className="btn-primary ml-2 !py-2">
-            <Mail className="h-4 w-4" /> Get in touch
+          <a href="#projects" className="btn-primary ml-2 !py-2">
+            View Projects
           </a>
         </nav>
 
@@ -78,11 +79,11 @@ export default function Nav() {
               </a>
             ))}
             <a
-              href={`mailto:${profile.email}`}
+              href="#projects"
               onClick={() => setOpen(false)}
               className="btn-primary mt-3 self-start"
             >
-              <Mail className="h-4 w-4" /> Get in touch
+              View Projects
             </a>
           </nav>
         </div>

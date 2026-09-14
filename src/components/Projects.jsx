@@ -4,7 +4,7 @@ import { projects } from '../data/projects.js';
 
 export default function Projects() {
   return (
-    <Section id="projects" kicker="03 — Selected work" title="Two systems, both in production.">
+    <Section id="projects" kicker="Projects" title="Systems I've built">
       <div className="space-y-8">
         {projects.map(p => (
           <article
@@ -30,24 +30,59 @@ export default function Projects() {
                     <dt className="text-xs font-mono uppercase tracking-wider text-accent">Problem</dt>
                     <dd className="mt-1 text-ink-dim leading-relaxed">{p.problem}</dd>
                   </div>
+                  {p.solution && (
+                    <div>
+                      <dt className="text-xs font-mono uppercase tracking-wider text-accent">Solution</dt>
+                      <dd className="mt-1 text-ink-dim leading-relaxed">{p.solution}</dd>
+                    </div>
+                  )}
                   <div>
                     <dt className="text-xs font-mono uppercase tracking-wider text-accent">What was hard</dt>
                     <dd className="mt-1 text-ink-dim leading-relaxed">{p.challenge}</dd>
                   </div>
+                  {p.myRole && (
+                    <div>
+                      <dt className="text-xs font-mono uppercase tracking-wider text-accent">My Role</dt>
+                      <dd className="mt-1 text-ink-dim leading-relaxed">{p.myRole}</dd>
+                    </div>
+                  )}
+                  {p.aiAssisted && (
+                    <div>
+                      <dt className="text-xs font-mono uppercase tracking-wider text-accent">AI-Assisted Development</dt>
+                      <dd className="mt-1 text-ink-dim leading-relaxed">{p.aiAssisted}</dd>
+                    </div>
+                  )}
                 </dl>
 
+                {/* features */}
+                {p.features && (
+                  <div className="mt-5">
+                    <dt className="text-xs font-mono uppercase tracking-wider text-accent mb-2">Key Features</dt>
+                    <ul className="space-y-1">
+                      {p.features.map((feature) => (
+                        <li key={feature} className="flex items-start gap-2 text-sm text-ink-dim">
+                          <span className="mt-1.5 h-1 w-1 rounded-full bg-accent flex-shrink-0" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
                 {/* metrics */}
-                <div className="mt-6 grid grid-cols-3 gap-3">
-                  {p.metrics.map(m => (
-                    <div
-                      key={m.label}
-                      className="rounded-lg border border-bg-line bg-bg/40 px-3 py-2"
-                    >
-                      <div className="text-base font-semibold text-ink">{m.value}</div>
-                      <div className="text-[11px] text-ink-mute leading-snug">{m.label}</div>
-                    </div>
-                  ))}
-                </div>
+                {p.metrics && (
+                  <div className="mt-6 grid grid-cols-3 gap-3">
+                    {p.metrics.map(m => (
+                      <div
+                        key={m.label}
+                        className="rounded-lg border border-bg-line bg-bg/40 px-3 py-2"
+                      >
+                        <div className="text-base font-semibold text-ink">{m.value}</div>
+                        <div className="text-[11px] text-ink-mute leading-snug">{m.label}</div>
+                      </div>
+                    ))}
+                  </div>
+                )}
 
                 <div className="mt-5 flex flex-wrap gap-1.5">
                   {p.stack.map(s => (

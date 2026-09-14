@@ -1,10 +1,13 @@
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, MapPin, Github, Linkedin, Download, Phone } from 'lucide-react';
+import { profile } from '../data/profile.js';
 
 const contactInfo = {
   email: 'jaredmiguel024@gmail.com',
-  phone: '0918-299-6474 / 0924-115-9199',
-  location: 'Pasig City, Philippines'
+  phone: '0918-299-6474',
+  phoneLink: 'tel:+639182996474',
+  location: 'Pasig City, Philippines',
+  locationLink: 'https://www.google.com/maps/search/?api=1&query=Pasig+City+Philippines'
 };
 
 export default function Contact() {
@@ -22,35 +25,91 @@ export default function Contact() {
             I'm currently open to opportunities. Feel free to reach out through any of these channels.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
             <a
               href={`mailto:${contactInfo.email}`}
-              className="group p-6 bg-zinc-900 rounded-xl border border-zinc-800 hover:border-amber-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10"
+              className="group p-6 bg-zinc-900 rounded-xl border border-zinc-800 hover:border-amber-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10 cursor-pointer"
+              aria-label="Send email to jaredmiguel024@gmail.com"
             >
               <Mail className="w-6 h-6 text-amber-500 mb-3 group-hover:scale-110 transition-transform" />
               <h3 className="text-white font-medium mb-1">Email</h3>
               <p className="text-zinc-400 text-sm">{contactInfo.email}</p>
+              <p className="text-zinc-500 text-xs mt-2">Click to email</p>
             </a>
 
             <a
-              href={`tel:${contactInfo.phone}`}
-              className="group p-6 bg-zinc-900 rounded-xl border border-zinc-800 hover:border-amber-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10"
+              href={contactInfo.phoneLink}
+              className="group p-6 bg-zinc-900 rounded-xl border border-zinc-800 hover:border-amber-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10 cursor-pointer"
+              aria-label="Call 0918-299-6474"
             >
               <Phone className="w-6 h-6 text-amber-500 mb-3 group-hover:scale-110 transition-transform" />
               <h3 className="text-white font-medium mb-1">Phone</h3>
               <p className="text-zinc-400 text-sm">{contactInfo.phone}</p>
+              <p className="text-zinc-500 text-xs mt-2">Click to call</p>
             </a>
 
-            <div className="p-6 bg-zinc-900 rounded-xl border border-zinc-800">
-              <MapPin className="w-6 h-6 text-amber-500 mb-3" />
+            <a
+              href={contactInfo.locationLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group p-6 bg-zinc-900 rounded-xl border border-zinc-800 hover:border-amber-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10 cursor-pointer"
+              aria-label="Open Pasig City, Philippines in Google Maps"
+            >
+              <MapPin className="w-6 h-6 text-amber-500 mb-3 group-hover:scale-110 transition-transform" />
               <h3 className="text-white font-medium mb-1">Location</h3>
               <p className="text-zinc-400 text-sm">{contactInfo.location}</p>
+              <p className="text-zinc-500 text-xs mt-2">Open in Maps</p>
+            </a>
+          </div>
+
+          <div className="card p-6 mb-8">
+            <h3 className="text-sm font-semibold text-ink mb-4 text-center">Connect with me</h3>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a
+                href={profile.socials.find(s => s.label === 'GitHub')?.href || '#'}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-ghost"
+                aria-label="View GitHub profile"
+              >
+                <Github className="h-4 w-4" />
+                GitHub
+              </a>
+              <a
+                href={profile.socials.find(s => s.label === 'LinkedIn')?.href || '#'}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-ghost"
+                aria-label="View LinkedIn profile"
+              >
+                <Linkedin className="h-4 w-4" />
+                LinkedIn
+              </a>
+              <a
+                href="/Jared_Christian_Miguel_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-ghost"
+                aria-label="View resume"
+              >
+                <Download className="h-4 w-4" />
+                View Resume
+              </a>
+              <a
+                href="/Jared_Christian_Miguel_CV.pdf"
+                download="Jared_Christian_Miguel_CV.pdf"
+                className="btn-primary"
+                aria-label="Download resume"
+              >
+                <Download className="h-4 w-4" />
+                Download Resume
+              </a>
             </div>
           </div>
 
-          <div className="mt-12 p-4 bg-zinc-900/50 rounded-lg border border-zinc-800">
+          <div className="p-4 bg-zinc-900/50 rounded-lg border border-zinc-800">
             <p className="text-zinc-500 text-sm text-center">
-              Responses typically within 24-48 hours
+              Open to entry-level opportunities
             </p>
           </div>
         </motion.div>
