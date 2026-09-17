@@ -1,12 +1,11 @@
 import Nav from './components/Nav';
 import Hero from './components/Hero';
 import WhatIBuild from './components/WhatIBuild';
-import About from './components/About';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
-import Resume from './components/Resume';
 import HowIBuild from './components/HowIBuild';
-import AITransparency from './components/AITransparency';
+import About from './components/About';
+import Resume from './components/Resume';
 import Skills from './components/Skills';
 import CurrentlyLearning from './components/CurrentlyLearning';
 import RecruiterCTA from './components/RecruiterCTA';
@@ -22,12 +21,11 @@ function App() {
         <WhatIBuild />
         <Experience />
         <Projects />
-        <Resume />
         <HowIBuild />
-        <AITransparency />
+        <About />
+        <Resume />
         <Skills />
         <CurrentlyLearning />
-        <About />
         <RecruiterCTA />
         <Contact />
       </main>

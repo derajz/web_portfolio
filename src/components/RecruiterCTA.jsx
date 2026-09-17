@@ -9,7 +9,6 @@ export default function RecruiterCTA() {
     'PHP Developer',
     'Junior Systems Analyst',
     'Business Systems / IT roles',
-    'AI Operations / AI-assisted development roles',
   ];
 
   return (
@@ -30,7 +29,7 @@ export default function RecruiterCTA() {
               Ready to contribute to your team
             </h2>
             <p className="text-lg text-ink-dim max-w-2xl mx-auto">
-              I'm currently open to entry-level opportunities where I can contribute to software development while continuing to grow in AI-assisted development, web applications, and business systems.
+              I'm currently open to entry-level opportunities where I can contribute to software development while continuing to grow in web applications and business systems.
             </p>
           </div>
 
@@ -47,7 +46,9 @@ export default function RecruiterCTA() {
 
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="#contact"
+              href={profile.socials.find(s => s.label === 'Email')?.href || '#contact'}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary"
             >
               <Mail className="h-4 w-4" />

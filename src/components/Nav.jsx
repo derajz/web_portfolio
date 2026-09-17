@@ -5,9 +5,9 @@ import { profile } from '../data/profile.js';
 const links = [
   { href: '#top',         label: 'Home' },
   { href: '#projects',    label: 'Projects' },
-  { href: '#resume',      label: 'Resume' },
   { href: '#how-i-build', label: 'How I Build' },
   { href: '#about',       label: 'About' },
+  { href: '#resume',      label: 'Resume' },
   { href: '#contact',     label: 'Contact' },
 ];
 
@@ -51,8 +51,13 @@ export default function Nav() {
               {l.label}
             </a>
           ))}
-          <a href="#projects" className="btn-primary ml-2 !py-2">
-            View Projects
+          <a
+            href={profile.socials.find(s => s.label === 'Email')?.href || '#contact'}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary ml-2 !py-2"
+          >
+            Contact Me
           </a>
         </nav>
 
@@ -79,11 +84,13 @@ export default function Nav() {
               </a>
             ))}
             <a
-              href="#projects"
+              href={profile.socials.find(s => s.label === 'Email')?.href || '#contact'}
               onClick={() => setOpen(false)}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary mt-3 self-start"
             >
-              View Projects
+              Contact Me
             </a>
           </nav>
         </div>

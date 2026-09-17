@@ -12,7 +12,7 @@ export const profile = {
   phone: '0918-299-6474',
   available: true,
   socials: [
-    { label: 'Email',    href: 'mailto:jaredmiguel024@gmail.com' },
+    { label: 'Email',    href: 'https://mail.google.com/mail/?view=cm&fs=1&to=jaredmiguel024@gmail.com&su=Inquiry%20about%20Junior%20Software%20Developer%20Position&body=Hi%20Jared,%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20discuss%20potential%20opportunities.%0A%0ABest%20regards' },
     { label: 'GitHub',   href: 'https://github.com/derajz' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/jared-christian-miguel-10182038b' },
   ],
@@ -22,9 +22,10 @@ export const profile = {
     { value: '100%',label: 'OJT requirements completed' },
   ],
   about: [
-    "I'm a recent BSIT graduate interested in building practical software systems that solve real problems.",
-    "My experience includes developing web applications using PHP, MySQL, JavaScript, and modern web technologies. During my internship, I worked on a real-world business booking system, while my academic projects gave me experience with database systems, CRUD operations, AJAX, testing, and debugging.",
-    "I'm particularly interested in AI-assisted development and using modern AI tools to build software faster while continuing to understand the underlying code, architecture, and business logic.",
+    "I graduated with a BS in Information Technology from STI College Sta. Mesa in 2024. My education focused on practical software development with hands-on projects in web applications and database systems.",
+    "During my internship at Bonzaire Enterprises, I worked on a production booking system that handles real customer appointments and service management. This gave me experience with actual business requirements, database design, and maintaining code that users rely on daily.",
+    "I approach development by planning the database structure first, then building the backend logic before focusing on the frontend. I spend time debugging and testing to make sure systems work reliably rather than just getting something to run temporarily.",
+    "I'm learning to use AI coding tools to speed up my development process, but I always review the generated code, test the functionality, and make sure I understand how the implementation works before considering it complete.",
   ],
 };
 
@@ -53,7 +54,7 @@ export const experience = [
       'Designed and built an RFID attendance system with a full web monitoring portal.',
       'Owned the backend, AJAX integration with the RFID reader, and the database schema.',
       'Implemented CRUD operations, real-time updates, testing, debugging, and performance optimization.',
-      'First system of mine deployed and used by other people — that changes how you write code.',
+      'First system of mine deployed and used by other people. That experience changes how you write code.',
     ],
     stack: ['PHP', 'MySQL', 'jQuery', 'AJAX', 'RFID', 'DB Design'],
   },

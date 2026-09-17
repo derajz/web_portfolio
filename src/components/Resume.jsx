@@ -16,9 +16,9 @@ export default function Resume() {
             <h3 className="text-lg font-semibold text-ink">Professional Summary</h3>
           </div>
           <p className="text-sm text-ink-dim leading-relaxed">
-            Recent BSIT graduate with hands-on experience developing web applications and business systems. 
-            Completed internship at Bonzaire Enterprises working on a production booking system. 
-            Experienced in PHP, MySQL, JavaScript, and modern web technologies with a focus on AI-assisted development practices.
+            Recent BSIT graduate with hands-on experience developing web applications and business systems.
+            Completed internship at Bonzaire Enterprises working on a production booking system.
+            Experienced in PHP, MySQL, JavaScript, and modern web technologies.
           </p>
         </div>
 

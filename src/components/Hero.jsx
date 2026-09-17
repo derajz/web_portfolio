@@ -47,8 +47,8 @@ export default function Hero() {
           </p>
 
           <p className="mt-6 max-w-xl text-base sm:text-lg text-ink-dim leading-relaxed">
-            Recent BSIT graduate focused on web applications, business systems, and AI-assisted development. 
-            I use AI coding tools to move faster while understanding, testing, debugging, and improving the software I build.
+            Recent BSIT graduate focused on web applications, business systems, and AI-assisted development.
+            I use AI coding tools to move faster while still understanding, testing, debugging, and improving the software I build.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -84,7 +84,9 @@ export default function Hero() {
               LinkedIn
             </a>
             <a
-              href={`mailto:${profile.email}`}
+              href={profile.socials.find(s => s.label === 'Email')?.href || '#'}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm text-ink-dim hover:text-accent transition-colors"
               aria-label="Send email"
             >

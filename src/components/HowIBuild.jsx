@@ -1,73 +1,49 @@
 import Section from './Section.jsx';
-import { Cpu, CheckCircle, TestTube, Bug, Rocket } from 'lucide-react';
+import { Cpu, CheckCircle, TestTube, Bug } from 'lucide-react';
 
 export default function HowIBuild() {
   const steps = [
     {
       number: '01',
       title: 'Understand',
-      description: 'Understand the problem, requirements, and expected behavior.',
+      description: 'I understand the requirements and what the system needs to accomplish.',
       icon: null,
     },
     {
       number: '02',
-      title: 'Plan',
-      description: 'Plan the system, workflow, data, and implementation.',
-      icon: null,
+      title: 'Build with AI',
+      description: 'I use AI coding tools to speed up implementation and explore solutions.',
+      icon: Cpu,
     },
     {
       number: '03',
-      title: 'Build',
-      description: 'Implement the system using normal development practices.',
+      title: 'Review',
+      description: 'I inspect the generated code and make sure I understand how it works.',
       icon: null,
     },
     {
       number: '04',
-      title: 'AI Assistance',
-      description: 'Use AI coding tools to accelerate development, explore solutions, generate boilerplate, investigate errors, and help with unfamiliar concepts.',
-      icon: Cpu,
-    },
-    {
-      number: '05',
-      title: 'Review',
-      description: 'Read and understand the generated code.',
-      icon: null,
-    },
-    {
-      number: '06',
       title: 'Test',
-      description: 'Test the functionality and expected behavior.',
+      description: 'I test the functionality and look for problems.',
       icon: TestTube,
     },
     {
-      number: '07',
-      title: 'Debug',
-      description: 'Investigate problems and fix issues.',
+      number: '05',
+      title: 'Debug and Improve',
+      description: 'I fix issues, refine the implementation, and improve the system.',
       icon: Bug,
-    },
-    {
-      number: '08',
-      title: 'Improve',
-      description: 'Refactor, optimize, and adjust the implementation.',
-      icon: null,
-    },
-    {
-      number: '09',
-      title: 'Deploy',
-      description: 'Deploy the finished system.',
-      icon: Rocket,
     },
   ];
 
   return (
-    <Section id="how-i-build" kicker="How I Build With AI" title="My development workflow">
+    <Section id="how-i-build" kicker="How I Build With AI" title="My development process">
       <div className="mb-12">
         <p className="text-lg text-ink-dim leading-relaxed">
-          I use AI as part of my development workflow, not as a replacement for understanding the system.
+          I use AI to build faster, but I remain responsible for understanding, testing, debugging, and improving what I build.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
         {steps.map((step) => {
           const Icon = step.icon;
           return (
@@ -97,10 +73,10 @@ export default function HowIBuild() {
           </div>
           <div>
             <h3 className="text-lg font-semibold text-ink mb-2">
-              AI is part of my development workflow, not a replacement for understanding the system.
+              AI helps me build faster. I remain responsible for the results.
             </h3>
             <p className="text-sm text-ink-dim leading-relaxed">
-              I use AI coding tools to move faster, but I always review, test, debug, and improve the code before considering it production-ready. Understanding the system logic and being able to modify it independently is essential to my process.
+              I use AI coding tools to accelerate development, but I always review the generated code, test the functionality, debug issues, and make implementation decisions. Understanding the system and being able to modify it independently is essential to my process.
             </p>
           </div>
         </div>

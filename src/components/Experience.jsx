@@ -4,7 +4,7 @@ import { experience } from '../data/profile.js';
 
 export default function Experience() {
   return (
-    <Section id="experience" kicker="Experience" title="Where I've actually shipped.">
+    <Section id="experience" kicker="Experience" title="Where I've worked">
       <ol className="relative border-l border-bg-line ml-3 space-y-6">
         {experience.map(e => (
           <li key={e.company} className="pl-8 relative">

@@ -4,7 +4,7 @@ import { profile, education, certifications } from '../data/profile.js';
 
 export default function About() {
   return (
-    <Section id="about" kicker="About Me" title="A short, honest introduction.">
+    <Section id="about" kicker="About" title="My background and approach">
       <div className="grid grid-cols-1 lg:grid-cols-[1.4fr,1fr] gap-10">
         <div className="space-y-5 text-ink-dim leading-relaxed">
           {profile.about.map((p, i) => (
@@ -83,7 +83,9 @@ export default function About() {
                 Resume
               </a>
               <a
-                href={`mailto:${profile.email}`}
+                href={profile.socials.find(s => s.label === 'Email')?.href || '#'}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="pill text-xs hover:border-accent/40"
               >
                 <Mail className="h-3 w-3 inline mr-1" />

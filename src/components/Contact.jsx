@@ -4,6 +4,7 @@ import { profile } from '../data/profile.js';
 
 const contactInfo = {
   email: 'jaredmiguel024@gmail.com',
+  emailLink: 'https://mail.google.com/mail/?view=cm&fs=1&to=jaredmiguel024@gmail.com&su=Inquiry%20about%20Junior%20Software%20Developer%20Position&body=Hi%20Jared,%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20discuss%20potential%20opportunities.%0A%0ABest%20regards',
   phone: '0918-299-6474',
   phoneLink: 'tel:+639182996474',
   location: 'Pasig City, Philippines',
@@ -22,12 +23,14 @@ export default function Contact() {
         >
           <h2 className="text-3xl font-bold text-white mb-4">Get in Touch</h2>
           <p className="text-zinc-400 mb-12">
-            I'm currently open to opportunities. Feel free to reach out through any of these channels.
+            I'm currently open to opportunities. Feel free to reach out.
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 mb-8">
             <a
-              href={`mailto:${contactInfo.email}`}
+              href={contactInfo.emailLink}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group p-6 bg-zinc-900 rounded-xl border border-zinc-800 hover:border-amber-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10 cursor-pointer"
               aria-label="Send email to jaredmiguel024@gmail.com"
             >
